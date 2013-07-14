@@ -5,6 +5,9 @@
   "bin": {
     "fuqit": "./fuqit"
   },
+  "files": [
+    "fuqit"
+  ],
   "repository": {
     "type": "git",
     "url": "git://github.com/ricardobeat/fuqit.git"
