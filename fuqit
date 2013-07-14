@@ -1,0 +1,30 @@
+#!/usr/bin/env node
+
+var fs   = require('fs')
+  , url  = require('url')
+  , glob = require('glob')
+  , mime = require('mime')
+  , ejs  = require('ejs')
+
+const PORT = process.argv[2] || 3000 + (Math.random() * 500 | 0)
+
+require('http').createServer(function (req, res) {
+    var dest = url.parse(req.url, true)
+      , file = process.cwd() + dest.pathname
+      , template
+
+    req.query = dest.query
+
+    try {
+        require(file)(req, res)
+    } catch (e) {
+        if (template = glob.sync('.' + dest.pathname + '.+(ejs|htm*)')[0]) {
+            res.end(template ? ejs.render(fs.readFileSync(template).toString(), req) : 'fuck off')
+        } else if (fs.existsSync(file)) {
+            res.setHeader('Content-Type', mime.lookup(file))
+            fs.createReadStream(file).pipe(res)
+        }
+    }
+}).listen(PORT)
+
+console.log("Listening on port " + PORT)

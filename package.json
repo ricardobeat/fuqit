@@ -1,0 +1,22 @@
+{
+  "name": "fuqit",
+  "description": "js port of the fuqit framework",
+  "version": "0.1.1",
+  "bin": {
+    "fuqit": "./fuqit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ricardobeat/fuqit.git"
+  },
+  "author": "Ricardo Tomasi <ricardobeat@gmail.com> (http://ricardo.cc)",
+  "license": {
+    "type": "MIT",
+    "url": "http://ricardo.mit-license.org"
+  },
+  "dependencies": {
+    "glob": "~3.2.3",
+    "mime": "~1.2.9",
+    "ejs": "~0.8.4"
+  }
+}
