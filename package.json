@@ -1,16 +1,16 @@
 {
-  "name": "fuqit",
+  "name": "fuqzed",
   "description": "js port of the fuqit framework",
   "version": "0.1.2",
   "bin": {
-    "fuqit": "./fuqit"
+    "fuqzed": "./fuqzed"
   },
   "files": [
-    "fuqit"
+    "fuqzed"
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/ricardobeat/fuqit.git"
+    "url": "git://github.com/ricardobeat/fuqzed.git"
   },
   "author": "Ricardo Tomasi <ricardobeat@gmail.com> (http://ricardo.cc)",
   "license": {
